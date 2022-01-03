@@ -1,7 +1,7 @@
 {
   "name": "@node-gis/proj4geojson",
   "description": "reproject for geojson file",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "type": "module",
   "authors": "Jeongyong Park <kladess@gmail.com> (https://jypark.pe.kr)",
   "url": "https://github.com/node-gis/proj4geojson",
