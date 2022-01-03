@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: npm run tsx
+      - run: npm run tsc
       - run: npm ci      
       - run: npm test
 
