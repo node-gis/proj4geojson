@@ -1,14 +1,17 @@
 {
   "name": "@node-gis/proj4geojson",
-  "version": "1.0.0",
-  "license": "MIT",
   "description": "reproject for geojson file",
+  "version": "0.0.1-beta.1",
   "type": "module",
+  "authors": "Jeongyong Park <kladess@gmail.com> (https://jypark.pe.kr)",
+  "url": "https://github.com/node-gis/proj4geojson",
+  "bugs": {
+    "url": "https://github.com/node-gis/proj4geojson/issues"
+  },
+  "license": "MIT",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
-  "files": [
-    "lib/"
-  ],
+  "files": ["lib/"],
   "keywords": [
     "proj",
     "proj4",
