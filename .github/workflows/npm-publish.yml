@@ -19,11 +19,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: setup git config
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
       - uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -38,13 +33,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: yarn version --prerelease --preid beta
-      - run: git push
-      - run: npm publish
+      - name: version update and publish to npm
+        run: |
+          yarn version --prerelease --preid beta
+          git push
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
