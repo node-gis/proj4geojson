@@ -5,9 +5,9 @@ name: Node.js Package
 
 on:
   push:
-    branches: [ develop ]
+    branches: [develop]
   pull_request:
-    branches: [ develop ]
+    branches: [develop]
 # on:
 #   release:
 #     types: [created]
@@ -18,20 +18,21 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        
+
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          
+
       - uses: actions/setup-node@v2
         with:
           node-version: 16
       - run: npm install
       - run: npm run tsc
-      - run: npm ci      
+      - run: npm ci
       - run: npm test
       - run: yarn version --prerelease --preid beta
+      - run: git push
 
   publish-npm-1:
     needs: build
@@ -47,4 +48,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
