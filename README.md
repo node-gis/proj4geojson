@@ -22,6 +22,14 @@ yarn add @node-gis/proj4geojson
     const conv_geojson = toWGS84(objGeoJson, "EPSG:3857");
 ```
 
+### Custom Coordinates Reference System.
+you can easily to use custom CRS with params from epsg.io same like proj4
+
+```javascript
+const epsg_5179 = '+ proj=tmerc +lat_0=38 + lon_0=127.5 + k=0.9996 + x_0=1000000 + y_0=2000000 + ellps=GRS80 + towgs84=0, 0, 0, 0, 0, 0, 0 + units=m + no_defs'
+const geojson4326 = toWGS84(testGeojson, epsg_5179);
+```
+
 
 ## LICENSE
 
